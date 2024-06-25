@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Recognition Results</title>
+    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" href="/static/result.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+    </div>
+    <div class="container">
+        <h1>Speech Recognition Results</h1>
+        <div class="result-content">
+            <h2>Recognized Text:</h2>
+            <p class="answer">{{ speech_text }}</p>
+            <h2>Translated Text:</h2>
+            <p class="answer">{{ translated_text }}</p>
+            <h2>Sentiment:</h2>
+            <p class="answer">{{ sentiment }}</p>
+        </div>
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>

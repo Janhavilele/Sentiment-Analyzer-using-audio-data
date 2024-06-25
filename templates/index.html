@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Analysis</title>
+    <link rel="stylesheet" href="/static/index.css">
+    <style>
+        /* Full screen CSS */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* Center the card */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        /* Style for the card */
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Hover effect on the card */
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style for the submit button */
+        #submitBtn {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #submitBtn:hover {
+            background-color: #005f6b;
+        }
+
+        /* Style for the file input container */
+        .upload-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <h1>Speech Analysis</h1>
+            <form action="/process" method="post">
+                <label for="language">Select language:</label>
+                <select name="language" id="language">
+                    <option value="en">English</option>
+                    <option value="mr">Marathi</option>
+                    <option value="hi">Hindi</option>
+                </select>
+                <br>
+                <div class="upload-container">
+                    <button id="submitBtn" type="submit">Process Speech</button>
+                </div>
+            </form>
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
